@@ -1,4 +1,11 @@
+import java.awt.*;
+
 public class RPGCharacter {
+
+    public static void main(String[] args) {
+        new RPGCharacterGUI();
+    }
+
 
     /*
     Make a GUI for your RPG Character builder you made in the last Unit. The user should enter primary stats in input box and the GUI

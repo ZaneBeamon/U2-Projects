@@ -1,4 +1,55 @@
+import javax.swing.*;
+
 public class WidgetFactory {
+
+    final static int WIDET_PER_HOUR = 10;
+    final static int NUM_SHIFTS = 2;
+    final static int SHIFT_HOURS = 8;
+    final static int NUM_WORKERS = 5;
+    final static double WAGE = 16.50;
+    final static double WIDGET_PRICE = 10.00;
+    static int numWidgets = 0;
+    public static void main(String[] args) {
+
+        
+
+        input();
+        System.out.println(NumDays());
+
+    }
+    public static void input(){
+
+        numWidgets = Integer.parseInt(JOptionPane.showInputDialog("how many widgets"));
+    }
+    public static void WidgetsPerDay(){
+        return NUM_SHIFTS * SHIFT_HOURS * WIDET_PER_HOUR;
+    }
+    public static void NumDays(){
+
+     return (int)Math.ceil(numWidgets/(double)WidgetsPerDay());
+    }
+    public static double cost(){
+
+        return NumDays() * NUM_SHIFTS * SHIFT_HOURS * WAGE * NUM_WORKERS;
+    }
+    public static double Profit(){
+        return (numWidgets * WIDGET_PRICE) - cost();
+
+    }
+    public static void output(){
+
+        String message = "";
+        message += "NUmber of Widgets" + numWidgets;
+        message =+ "\nNumber of Days:" + NumDays();
+        message += "\nCost of Widgets:" + numWidgets * WIDGET_PRICE;
+        message += "\nCost Production" + cost();
+        message += "\nProft:" + profit();
+
+        JOptionPane.showMessageDialog(null, message);
+    }
+
+
+
 
     /*
     Lessons L1 - L3
